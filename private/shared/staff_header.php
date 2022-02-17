@@ -14,8 +14,8 @@ $page_title = isset($page_title) ? $page_title : '';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" media="all" href="../stylesheets/staff.css" />
-    <title>GBI - <?php echo $page_title; ?> </title>
+    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css'); ?>" />
+    <title>GBI - <?php echo h($page_title); ?> </title>
 </head>
 
 <body>
@@ -25,9 +25,6 @@ $page_title = isset($page_title) ? $page_title : '';
 
     <Naviagation>
         <ul>
-            <li><a href="index.php">Menu</a></li>
-
-            <!-- <li><a href="staff.php">Staff</a></li>
-            <li><a href="admin.php">Admin</a></li> -->
+            <li><a href="<?php echo url_for('/staff/index.php'); ?>">Menu</a></li>
         </ul>
     </Naviagation>
