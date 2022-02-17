@@ -10,6 +10,8 @@
 
 <body>
 
+    <h1>CMS Application Coming Soon!</h1>
+
 </body>
 
 </html>
