@@ -18,5 +18,9 @@
     // initialize loads functions.php, as well as other libraries of code.
     // require_once,  because we do not want to define a function more than once.
     require_once('functions.php');
+    require_once('database.php');
+    require_once('query_functions.php');
+
+    $db = db_connect();
 
 ?>
