@@ -14,6 +14,10 @@ require_once ('db_credentials.php');
         }
     }
 
+    function db_escape($connection, $string) {
+        return mysqli_real_escape_string($connection, $string);
+    }
+
     // did the connection work and if not, what is the error?
     function confirm_db_connect() {
         if(mysqli_connect_errno()) {
