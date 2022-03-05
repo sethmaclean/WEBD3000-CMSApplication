@@ -2,18 +2,21 @@
 
 require_once ('db_credentials.php');
 
+    // Connect to the database
     function db_connect() {
         $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
         confirm_db_connect();
         return $connection;
     }
 
+    // disconnect from the database
     function db_disconnect($connection) {
         if(isset($connection)) {
             mysqli_close($connection);
         }
     }
 
+    // escapes special characters in a string
     function db_escape($connection, $string) {
         return mysqli_real_escape_string($connection, $string);
     }
@@ -28,6 +31,7 @@ require_once ('db_credentials.php');
         }
     }
 
+    // did the query work and if not, what is the error?
     function confirm_result_set($result_set) {
         if (!$result_set) {
             exit("Database query failed.");

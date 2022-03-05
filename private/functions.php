@@ -10,44 +10,28 @@ function url_for($script_path) {
     return WWW_ROOT . $script_path;
   }
 
-  // encodes the url for the query string 
+  // shorthand function for urlEncode()
   function u($string="") {
     return urlencode($string);
   }
 
-  // raw encodes the url for the query string
-  function raw_u($string="") {
-    return rawurlencode($string);
-  }
-
-  // quick function for htmlspecialchars()
+  // shorthand function for htmlspecialchars()
   function h($string="") {
     return htmlspecialchars($string);
   }
 
-  function error_404() {
-    header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-    exit();
-  }
-
-  function error_500() {
-    header($_SERVER["SERVER_PROTOCOL"] . " 500 Internal Server Error");
-    exit();
-  }
-
+  // function to return the current URL
   function redirect_to($location) {
     header("Location: " . $location);
     exit;
   }
 
+  // shorthand function to identify post calls
   function is_post_request() {
     return $_SERVER['REQUEST_METHOD'] == 'POST';
   }
 
-  function is_get_request() {
-    return $_SERVER['REQUEST_METHOD'] == 'GET';
-  }
-
+  // display errors in an unordered list
   function display_errors($errors=array()) {
     $output = '';
     if(!empty($errors)) {
